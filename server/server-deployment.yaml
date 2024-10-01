@@ -1,0 +1,17 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: webrtc-client
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: webrtc-client
+  template:
+    metadata:
+      labels:
+        app: webrtc-client
+    spec:
+      containers:
+      - name: webrtc-client
+        image: younes43/webrtc-client:latest
